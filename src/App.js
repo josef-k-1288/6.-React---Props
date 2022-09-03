@@ -1,3 +1,8 @@
+/* 
+- Props su argumenti koji se prosleđuju u React komponente
+- Prop drilling omogucava da prenesemo podatke iz parrent u child komponente
+*/
+
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
@@ -27,7 +32,7 @@ function App() {
 const handleCheck = (id) => {
   //console.log(`key: ${id}`)
   const listItems = items.map((item) => item.id === id ? { // Funkcija map() se koristi za ponavljanje niza i manipulisanje ili promenu stavki podataka. U React-u, funkcija map() se najčešće koristi za prikazivanje liste podataka u DOM-u.
-      ...item,
+      ...item, // operator širenja ili Spread Operator(...) nam omogućava da brzo kopiramo ceo ili deo postojećeg niza ili objekta u drugi niz ili objekat.
       checked: !item.checked
   } : item);
   setItems(listItems);
